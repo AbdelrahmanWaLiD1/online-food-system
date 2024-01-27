@@ -90,7 +90,7 @@ abstract class User {
         }
         return true;
     }
-    public boolean isValidEmailAndPassword() {
+    public static boolean isValidEmailAndPassword(String email,String password) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
@@ -114,7 +114,7 @@ abstract class User {
         }
         return password.length() >= 8 && containsDigit && containsLowercase && containsUppercase && containsSpecialChar && matcher.matches();
     }
-    public  boolean isValidPhoneNumber(String phoneNumber) {
+    public static boolean isValidPhoneNumber(String phoneNumber) {
         if (phoneNumber.matches("^(012|010|011|015)\\d{8}$")) {
             // Check if the phone number is exactly 11 digits
             return phoneNumber.length() == 11;
