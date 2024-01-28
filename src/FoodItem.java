@@ -2,7 +2,7 @@ public class FoodItem {
     private String name;
     private String description;
     private double price;
-    private int quantity;
+    private int quantity=0;
     private boolean availibilty=false;
     public FoodItem(String name, String description, double price, int quantity) {
         this.name = name;
@@ -20,9 +20,6 @@ public class FoodItem {
     }
     public String getDescription() {
         return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
     }
     public double getPrice() {
         return price;
