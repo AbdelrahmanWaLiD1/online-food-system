@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class restaurant {
+public class Restaurant {
     private String name;
     private String city;
     private String building_num;
     private String StreetAddress;
-    private List<Menu> menus = new ArrayList<Menu>();
+    private  List<Menu> menus = new ArrayList<Menu>();
 
-    public restaurant(String name, String city, String building_num, String streetAddress) {
+    public Restaurant(String name, String city, String building_num, String streetAddress) {
         name = name;
         this.city = city;
         this.building_num = building_num;
@@ -47,10 +47,11 @@ public class restaurant {
     public void setStreetAddress(String streetAddress) {
         StreetAddress = streetAddress;
     }
-
+    public void addMenu(Menu menu){
+        menus.add(menu);
+    }
     public void updateMenus(String menuName) {
         System.out.println("which menu you want to update");
-        ;
         for (Menu menu : menus) {
             menu.displayMenu();
         }
